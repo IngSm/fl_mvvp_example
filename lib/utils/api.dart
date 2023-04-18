@@ -6,14 +6,10 @@ import 'package:mvvm_test/main.dart';
 enum SendType { GET, POST }
 
 class ApiService {
-  ApiService(this.url, this.sendType, [this.body]);
-
-  final Map<String, dynamic>? body;
-  final String url;
-  final SendType sendType;
   final _client = http.Client();
 
-  Future<http.Response?> getData() async {
+  Future<http.Response?> getData(String url, SendType sendType,
+      [Map<String, dynamic>? body]) async {
     Map<String, dynamic> params = {'api_key': nasaApiKey};
     Uri generatedUrl = Uri.https('api.nasa.gov', url, params);
     logger.i(

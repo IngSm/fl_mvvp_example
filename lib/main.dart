@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:logger/logger.dart';
 import 'package:mvvm_test/keys.dart';
+import 'package:mvvm_test/utils/api.dart';
 import 'package:mvvm_test/view_models/view_models.dart';
 import 'package:mvvm_test/views/home_view.dart';
 
 const nasaApiKey = apiKey;
 final logger = Logger();
 final homeViewModel = HomeViewModel();
+final apiService = ApiService();
 
 void main() {
   runApp(const MyApp());

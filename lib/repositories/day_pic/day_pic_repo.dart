@@ -6,10 +6,7 @@ import 'package:mvvm_test/utils/api.dart';
 
 class DayPicRepo {
   Future<DayPic?> fetchData() async {
-    var res = await ApiService(
-      'planetary/apod',
-      SendType.GET,
-    ).getData();
+    var res = await apiService.getData('planetary/apod', SendType.GET);
     if (res != null && res.statusCode == 200) {
       var parsedJson = DayPic.fromJson(jsonDecode(res.body));
       DayPic adapDayPic = DayPic(

@@ -1,5 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:mvvm_test/views/Home.dart';
+import 'package:logger/logger.dart';
+import 'package:mvvm_test/keys.dart';
+import 'package:mvvm_test/view_models/view_models.dart';
+import 'package:mvvm_test/views/home_view.dart';
+
+const nasaApiKey = apiKey;
+final logger = Logger();
+final homeViewModel = HomeViewModel();
 
 void main() {
   runApp(const MyApp());
@@ -13,8 +20,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
-      theme: ThemeData(useMaterial3: true, colorSchemeSeed: Colors.teal),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      theme: ThemeData(useMaterial3: true, colorSchemeSeed: Colors.indigo),
+      home: const MyHomePage(),
     );
   }
 }
